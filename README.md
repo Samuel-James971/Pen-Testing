@@ -20,10 +20,10 @@ Next, I wanted to run an enumeration scan on the targets IP address to identify 
 <br />
 <br />
 However, this identified directory could not be found. There could be other directories starting with the same ~ character, however. In an attempt to find more directories I used a method called “fuzzing” which is the process of guessing directory names. I used an automated tool called FFUF for this process:   <br/>
-![image alt]()
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/4.png?raw=true)
 <br />
 <br />
-The workflow automation use an AI action to summarise the incoming webhook alert into a concise sentence and genrate bullet points for analysts. The AI proccesses the alert using a prompt and passes the output to an email action which send an email alert to the analsyt:  <br/>
+After running the FFUF tool on the ~ sign I was able to find a directory named ~secret, after opening this file I found a hint that says the SSH private key is hidden somewhere in this directory. I ran another FFUF scan this time on ~secret. This scan brute forced the ~secret directory in order to search for hidden files. One file returned many responses, so I decided to open it on the browser. This is what the file contained:  <br/>
 ![image alt](https://github.com/Samuel-James971/AI-Workflow-Automation/blob/main/Screenshot%202025-07-08%20161240.png?raw=true)
 <br />
 <br />

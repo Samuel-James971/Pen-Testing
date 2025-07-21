@@ -45,7 +45,20 @@ I used the find command to identify files with full permissions on the target ma
  To begin python library hijacking I utilised the nano command to edit the python script to call /bin/bash code into it. here is the code I entered into the python file os.system (“/bin/bash”)
 After this I ran the sudo command along with the coordinates specified in the permissions check on “ice64x” to switch the user to “arsene”. 
 :  <br/>
-![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/9.png?raw=true)
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/10.png?raw=true)
+<br />
+<br />
+I then began to identify the privileges of the user “arsene”. After analysing the outputs I spotted a new vulnerability that could allow me to escalate user privilege. The vulnerability I discovered was PIP Privilege escalation. Python package manager (PIP) is a widely used tool for managing and installing Python packages, however it has been found to have privilege escalation vulnerabilities that can be exploited by attackers to gain access to a user’s system . 
+:  <br/>
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/11.png?raw=true)
+<br />
+<br />
+I used these three commands to escalate user privilege, all had to do was then simply CD into root and open the root.txt file and the vulnerable VM had been completed.
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/12.png?raw=true)
+<br />
+As you can see after opening the root.txt I had completed the vulnerable VM.
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/13.png?raw=true)
+
 
 
 

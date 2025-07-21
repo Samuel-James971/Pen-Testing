@@ -6,12 +6,12 @@
 <h2>Project walk-through:</h2>
 
 <p align="center">
-My first step of scanning was to run a port scan using nmap against the IP address of the vulnerable machine : <br/>
+My first step was to run a port scan using nmap against the IP address of the vulnerable machine : <br/>
 
-![image alt](https://github.com/Samuel-James971/AI-Workflow-Automation/blob/main/Screenshot%202025-07-09%20094109.pdf.png?raw=true)
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/1.png?raw=true)
 <br />
 <br />
-Setting up Elastic SIEM on the VM allows for log data to be injested into elastic SIEM, this can be achieved through installing an endpoint detection agent, in this case, elastic defend. This provides security monitioring for the VM:  <br/>
+In the command I used the -sV option for version enumeration and -p- to conduct a full port scan, the results of the scan showed that port 80 is being used for the HTTP service and port 22 is being used for SSH. :  <br/>
 ![image alt](https://github.com/Samuel-James971/AI-Workflow-Automation/blob/main/Screenshot%202025-07-08%20141747.png?raw=true)
 <br />
 <br />

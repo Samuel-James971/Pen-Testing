@@ -9,7 +9,6 @@ Privilege escalation methodology
 
 Screenshots and command outputs
 
-Lessons learned and remediation recommendations
  <h2>Description</h2>
 
 <br />

@@ -39,9 +39,13 @@ Now I was able to use john the ripper to crack the hash file and find the passwo
 <br />
 Now that I has the password, I was able to log in as the user “icex64@LupinOne”. My immediant next step was to check the sudo permissions of the current user “icex64”, I was able to find a python file. I attempted to view the contents of the python file “heist.py” that seemed to be owned by another user named “arsene”, it however only displayed a text to be displayed upon execution. I continued to enumerate the target machine in an attempt to find a vulnerability. 
 I used the find command to identify files with full permissions on the target machine. I found another file named “webbrowser.py” which after running the ls -l command I found that the root user owns it. the file permissions are set to 777 which means the current user has read, write, and executed permissions for the python file. This means that the file could be edited and have code entered into it. it also means that it is susceptible to python library hijacking.:  <br/>
-![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/8.png?raw=true)
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/9.png?raw=true)
 <br />
 <br />
+ To begin python library hijacking I utilised the nano command to edit the python script to call /bin/bash code into it. here is the code I entered into the python file os.system (“/bin/bash”)
+After this I ran the sudo command along with the coordinates specified in the permissions check on “ice64x” to switch the user to “arsene”. 
+:  <br/>
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/9.png?raw=true)
 
 
 

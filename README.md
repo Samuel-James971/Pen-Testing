@@ -28,7 +28,13 @@ After running the FFUF tool on the ~ sign I was able to find a directory named ~
 <br />
 <br />
 I put the contents of the file into a cipher identifier and discovered that it was a base 58 cipher. The same website had a cipher decoder, so I put the encrypted message into that. After decoding the message, I found that the encrypted message contained the SSH key. I saved the SSH key as a file named “key” on my machine using the cat >> key command.:  <br/>
-![image alt](https://github.com/Samuel-James971/AI-Workflow-Automation/blob/main/Screenshot%202025-07-08%20161352.png?raw=true)
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/7.png?raw=true)
+<br />
+<br />
+
+To begin with exploitation my next step was to attempt to crack the passphrase of the key file. One of the best tools for cracking passwords is John the ripper, which is also configured in Kali Linux by default. For the SSH key I had to first of extract the hash from the key before I could crack it. This can be done by using ssh2john which is a utility within the john the ripper tool. I extracted the hash by using the command ssh2john key > hash. 
+Now I was able to use john the ripper to crack the hash file and find the password of the SSH key. After running john, the ripper using the default wordlist “fasttrack.txt” the results showed that the password was “P@55w0rd!”:  <br/>
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/7.png?raw=true)
 <br />
 <br />
 

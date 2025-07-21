@@ -34,9 +34,16 @@ I put the contents of the file into a cipher identifier and discovered that it w
 
 To begin with exploitation my next step was to attempt to crack the passphrase of the key file. One of the best tools for cracking passwords is John the ripper, which is also configured in Kali Linux by default. For the SSH key I had to first of extract the hash from the key before I could crack it. This can be done by using ssh2john which is a utility within the john the ripper tool. I extracted the hash by using the command ssh2john key > hash. 
 Now I was able to use john the ripper to crack the hash file and find the password of the SSH key. After running john, the ripper using the default wordlist “fasttrack.txt” the results showed that the password was “P@55w0rd!”:  <br/>
-![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/7.png?raw=true)
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/8.png?raw=true)
 <br />
 <br />
+Now that I has the password, I was able to log in as the user “icex64@LupinOne”. My immediant next step was to check the sudo permissions of the current user “icex64”, I was able to find a python file. I attempted to view the contents of the python file “heist.py” that seemed to be owned by another user named “arsene”, it however only displayed a text to be displayed upon execution. I continued to enumerate the target machine in an attempt to find a vulnerability. 
+I used the find command to identify files with full permissions on the target machine. I found another file named “webbrowser.py” which after running the ls -l command I found that the root user owns it. the file permissions are set to 777 which means the current user has read, write, and executed permissions for the python file. This means that the file could be edited and have code entered into it. it also means that it is susceptible to python library hijacking.:  <br/>
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/8.png?raw=true)
+<br />
+<br />
+
+
 
 
 <!--

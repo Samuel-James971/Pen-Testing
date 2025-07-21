@@ -1,4 +1,15 @@
 # Pen-Testing
+🔐 Empire: LupinOne - VulnHub Penetration Test
+This repository contains my penetration testing walkthrough and analysis of the vulnerable machine Empire: LupinOne, hosted on VulnHub. The goal of this project was to simulate a real-world attack scenario by identifying and exploiting security flaws in a controlled environment.
+
+🛠️ Key Features:
+Full enumeration and exploitation process
+
+Privilege escalation methodology
+
+Screenshots and command outputs
+
+Lessons learned and remediation recommendations
  <h2>Description</h2>
 
 <br />

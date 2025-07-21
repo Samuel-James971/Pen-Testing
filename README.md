@@ -24,10 +24,10 @@ However, this identified directory could not be found. There could be other dire
 <br />
 <br />
 After running the FFUF tool on the ~ sign I was able to find a directory named ~secret, after opening this file I found a hint that says the SSH private key is hidden somewhere in this directory. I ran another FFUF scan this time on ~secret. This scan brute forced the ~secret directory in order to search for hidden files. One file returned many responses, so I decided to open it on the browser. This is what the file contained:  <br/>
-![image alt](https://github.com/Samuel-James971/AI-Workflow-Automation/blob/main/Screenshot%202025-07-08%20161240.png?raw=true)
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/5.png?raw=true)
 <br />
 <br />
-Here is the email alert sent to the analyst:  <br/>
+I put the contents of the file into a cipher identifier and discovered that it was a base 58 cipher. The same website had a cipher decoder, so I put the encrypted message into that. After decoding the message, I found that the encrypted message contained the SSH key. I saved the SSH key as a file named “key” on my machine using the cat >> key command.:  <br/>
 ![image alt](https://github.com/Samuel-James971/AI-Workflow-Automation/blob/main/Screenshot%202025-07-08%20161352.png?raw=true)
 <br />
 <br />

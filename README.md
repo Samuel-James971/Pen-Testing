@@ -12,10 +12,10 @@ My first step was to run a port scan using nmap against the IP address of the vu
 <br />
 <br />
 In the command I used the -sV option for version enumeration and -p- to conduct a full port scan, the results of the scan showed that port 80 is being used for the HTTP service and port 22 is being used for SSH. :  <br/>
-![image alt](https://github.com/Samuel-James971/AI-Workflow-Automation/blob/main/Screenshot%202025-07-08%20141747.png?raw=true)
+![image alt](https://github.com/Samuel-James971/Pen-Testing/blob/main/2.png?raw=true)
 <br />
 <br />
-Here a workflow automation is setup using Times, involving a webhook, AI and email action: <br/>
+Next, I wanted to run an enumeration scan on the targets IP address to identify any hidden directories, I used the tool Drib for this which is preinstalled on Kali Linux. I was able to identify a few files and directories from the scan and decided to enter a few of them into a search engine. One of the directories lead me to an interesting discovery. The robots.txt file contained the name of another directory.: <br/>
 ![image alt](https://github.com/Samuel-James971/AI-Workflow-Automation/blob/main/Screenshot%202025-07-08%20142236.png?raw=true)
 <br />
 <br />
